@@ -17,14 +17,15 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.FRONTEND_URL,
+    origin: "https://hospital-food-management-nrajus-projects.vercel.app",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   },
 });
 
 // Middleware
+
 app.use(cors({
-  origin: 'http://localhost:3000', // Our React frontend URL
+  origin: 'https://hospital-food-management-nrajus-projects.vercel.app', // Our React frontend URL
   credentials: true
 }));
 // app.use(cors());
